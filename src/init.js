@@ -6,9 +6,14 @@ const util = require('util')
 const exec = util.promisify(require('child_process').exec)
 import { updateJsonFile } from './util'
 
-let init = async (username, token) => {
+const USERNAME = 'SQqDd'
+const TOKEN = '5c62e8d825dd1be9eb924b2facba2358c81bb9c1'
+
+let init = async (username = USERNAME, token = TOKEN) => {
   try {
     await loadCmd(`git init`, 'git初始化')
+    username = USERNAME
+    token = TOKEN
     if (username === '' || token === '') {
       console.log(symbol.warning, chalk.yellow('缺少入参无法创建远端仓库'))
     } else {

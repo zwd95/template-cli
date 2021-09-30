@@ -43,10 +43,12 @@ let create = async ProjectName => {
         let Api = '';
         switch (answer.frame) {
           case 'vue':
-            Api = 'direct:https://github.com/For-Article/vue-temlate.git';
+            Api = 'direct:https://github.com/SQqDd/vue-template.git';
             break;
           case 'react':
-            Api = 'direct:https://github.com/LuoYangYY/react-template.git';
+            Api = '';
+            break;
+          case 'miniprogram':
             break;
           default:
             break;
@@ -60,7 +62,7 @@ let create = async ProjectName => {
           const fileName = `${ProjectName}/package.json`;
           answer.name = ProjectName;
           (0, _util.updateJsonFile)(fileName, answer).then(() => {
-            console.log(_logSymbols2.default.success, _chalk2.default.green('配置文件更新完的。'));
+            console.log(_logSymbols2.default.success, _chalk2.default.green('配置文件更新完成。'));
           });
         }, () => {
           loading.fail('模板下载失败');

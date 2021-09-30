@@ -64,8 +64,8 @@ let actionMap = {
         description: 'github创建的token',
         defaultValue: ''
       }
-    ]
-    alias: 'd'
+    ],
+    alias: 'b'
   }
 }
 
